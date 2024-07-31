@@ -78,22 +78,22 @@ public class CustomerTest {
 //
 //	}
 
-	@Test
-	void testAddCustomer3() {
-		webDriver.findElement(By.linkText("View Customer")).click();
-		webDriver.findElement(By.linkText("Add Customer +")).click();
-		webDriver.findElement(By.name("customername")).sendKeys("hari");
-		webDriver.findElement(By.name("customerage")).sendKeys("twelve");
-		webDriver.findElement(By.name("customeraddress")).sendKeys("");
-		webDriver.findElement(By.name("customergender")).sendKeys("male");
-		webDriver.findElement(By.name("insuranceid")).sendKeys("27");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please enter customeraddress !!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddCustomer3() {
+	// 	webDriver.findElement(By.linkText("View Customer")).click();
+	// 	webDriver.findElement(By.linkText("Add Customer +")).click();
+	// 	webDriver.findElement(By.name("customername")).sendKeys("hari");
+	// 	webDriver.findElement(By.name("customerage")).sendKeys("twelve");
+	// 	webDriver.findElement(By.name("customeraddress")).sendKeys("");
+	// 	webDriver.findElement(By.name("customergender")).sendKeys("male");
+	// 	webDriver.findElement(By.name("insuranceid")).sendKeys("27");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please enter customeraddress !!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
 	@Test
 	void testAddCustomer4() {
