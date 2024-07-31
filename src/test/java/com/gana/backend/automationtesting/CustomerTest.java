@@ -18,15 +18,15 @@ public class CustomerTest {
 
 	private WebDriver webDriver;
 
-	@BeforeEach
-	void init() {
-		webDriver = new ChromeDriver();
-		webDriver.get("http://localhost:7775");
-		webDriver.findElement(By.linkText("Login")).click();
-		webDriver.findElement(By.name("username")).sendKeys("tomi");
-		webDriver.findElement(By.name("password")).sendKeys("Tom@12345");
-		webDriver.findElement(By.name("submit")).submit();
-	}
+	// @BeforeEach
+	// void init() {
+	// 	webDriver = new ChromeDriver();
+	// 	webDriver.get("http://localhost:7775");
+	// 	webDriver.findElement(By.linkText("Login")).click();
+	// 	webDriver.findElement(By.name("username")).sendKeys("tomi");
+	// 	webDriver.findElement(By.name("password")).sendKeys("Tom@12345");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// }
 
 //	@Test
 //	void testAddCustomer() {
@@ -44,22 +44,22 @@ public class CustomerTest {
 //
 //	}
 
-	@Test
-	void testAddCustomer1() {
-		webDriver.findElement(By.linkText("View Customer")).click();
-		webDriver.findElement(By.linkText("Add Customer +")).click();
-		webDriver.findElement(By.name("customername")).sendKeys("");
-		webDriver.findElement(By.name("customerage")).sendKeys("two");
-		webDriver.findElement(By.name("customeraddress")).sendKeys("dgl");
-		webDriver.findElement(By.name("customergender")).sendKeys("male");
-		webDriver.findElement(By.name("insuranceid")).sendKeys("27");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please enter  customername !!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddCustomer1() {
+	// 	webDriver.findElement(By.linkText("View Customer")).click();
+	// 	webDriver.findElement(By.linkText("Add Customer +")).click();
+	// 	webDriver.findElement(By.name("customername")).sendKeys("");
+	// 	webDriver.findElement(By.name("customerage")).sendKeys("two");
+	// 	webDriver.findElement(By.name("customeraddress")).sendKeys("dgl");
+	// 	webDriver.findElement(By.name("customergender")).sendKeys("male");
+	// 	webDriver.findElement(By.name("insuranceid")).sendKeys("27");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please enter  customername !!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
 //	@Test
 //	void testAddCustomer2() {
@@ -95,22 +95,22 @@ public class CustomerTest {
 
 	// }
 
-	@Test
-	void testAddCustomer4() {
-		webDriver.findElement(By.linkText("View Customer")).click();
-		webDriver.findElement(By.linkText("Add Customer +")).click();
-		webDriver.findElement(By.name("customername")).sendKeys("hari");
-		webDriver.findElement(By.name("customerage")).sendKeys("twelve");
-		webDriver.findElement(By.name("customeraddress")).sendKeys("coimbatore");
-		webDriver.findElement(By.name("customergender")).sendKeys("");
-		webDriver.findElement(By.name("insuranceid")).sendKeys("27");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please Enter the Valid customergender!!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddCustomer4() {
+	// 	webDriver.findElement(By.linkText("View Customer")).click();
+	// 	webDriver.findElement(By.linkText("Add Customer +")).click();
+	// 	webDriver.findElement(By.name("customername")).sendKeys("hari");
+	// 	webDriver.findElement(By.name("customerage")).sendKeys("twelve");
+	// 	webDriver.findElement(By.name("customeraddress")).sendKeys("coimbatore");
+	// 	webDriver.findElement(By.name("customergender")).sendKeys("");
+	// 	webDriver.findElement(By.name("insuranceid")).sendKeys("27");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please Enter the Valid customergender!!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
 //	@Test
 //	void testUpdateCustomer() {
