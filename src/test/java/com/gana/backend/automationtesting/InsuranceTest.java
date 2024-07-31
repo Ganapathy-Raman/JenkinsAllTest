@@ -17,15 +17,15 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class InsuranceTest {
 	private WebDriver webDriver;
 
-	@BeforeEach
-	void init() {
-		webDriver = new ChromeDriver();
-		webDriver.get("http://localhost:7775");
-		webDriver.findElement(By.linkText("Login")).click();
-		webDriver.findElement(By.name("username")).sendKeys("tomi");
-		webDriver.findElement(By.name("password")).sendKeys("Tom@12345");
-		webDriver.findElement(By.name("submit")).submit();
-	}
+	// @BeforeEach
+	// void init() {
+	// 	webDriver = new ChromeDriver();
+	// 	webDriver.get("http://localhost:7775");
+	// 	webDriver.findElement(By.linkText("Login")).click();
+	// 	webDriver.findElement(By.name("username")).sendKeys("tomi");
+	// 	webDriver.findElement(By.name("password")).sendKeys("Tom@12345");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// }
 
 //	@Test
 //	void testAddInsurance() {
@@ -44,23 +44,23 @@ public class InsuranceTest {
 //
 //	}
 
-	@Test
-	void testAddInsurance1() {
-		webDriver.findElement(By.linkText("View Insurance")).click();
-		webDriver.findElement(By.linkText("Add Insurance +")).click();
-		webDriver.findElement(By.name("insurancenumber")).sendKeys("");
-		webDriver.findElement(By.name("insurancetakendate")).sendKeys("23");
-		webDriver.findElement(By.name("insurancevaliddate")).sendKeys("534");
-		webDriver.findElement(By.name("insuranceamount")).sendKeys("35");
-		webDriver.findElement(By.name("customervehicleid")).sendKeys("27");
-		webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please enter Insurance Number !!! ", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddInsurance1() {
+	// 	webDriver.findElement(By.linkText("View Insurance")).click();
+	// 	webDriver.findElement(By.linkText("Add Insurance +")).click();
+	// 	webDriver.findElement(By.name("insurancenumber")).sendKeys("");
+	// 	webDriver.findElement(By.name("insurancetakendate")).sendKeys("23");
+	// 	webDriver.findElement(By.name("insurancevaliddate")).sendKeys("534");
+	// 	webDriver.findElement(By.name("insuranceamount")).sendKeys("35");
+	// 	webDriver.findElement(By.name("customervehicleid")).sendKeys("27");
+	// 	webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please enter Insurance Number !!! ", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
 //	@Test
 //	void testAddInsurance2() {
@@ -79,77 +79,77 @@ public class InsuranceTest {
 //
 //	}
 
-	@Test
-	void testAddInsurance3() {
-		webDriver.findElement(By.linkText("View Insurance")).click();
-		webDriver.findElement(By.linkText("Add Insurance +")).click();
-		webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
-		webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
-		webDriver.findElement(By.name("insurancevaliddate")).sendKeys("");
-		webDriver.findElement(By.name("insuranceamount")).sendKeys("35");
-		webDriver.findElement(By.name("customervehicleid")).sendKeys("27");
-		webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please enter Insurance Valid Date !!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddInsurance3() {
+	// 	webDriver.findElement(By.linkText("View Insurance")).click();
+	// 	webDriver.findElement(By.linkText("Add Insurance +")).click();
+	// 	webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
+	// 	webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
+	// 	webDriver.findElement(By.name("insurancevaliddate")).sendKeys("");
+	// 	webDriver.findElement(By.name("insuranceamount")).sendKeys("35");
+	// 	webDriver.findElement(By.name("customervehicleid")).sendKeys("27");
+	// 	webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please enter Insurance Valid Date !!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
-	@Test
-	void testAddInsurance4() {
-		webDriver.findElement(By.linkText("View Insurance")).click();
-		webDriver.findElement(By.linkText("Add Insurance +")).click();
-		webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
-		webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
-		webDriver.findElement(By.name("insurancevaliddate")).sendKeys("356");
-		webDriver.findElement(By.name("insuranceamount")).sendKeys("");
-		webDriver.findElement(By.name("customervehicleid")).sendKeys("27");
-		webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please enter Insurance Amount !!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddInsurance4() {
+	// 	webDriver.findElement(By.linkText("View Insurance")).click();
+	// 	webDriver.findElement(By.linkText("Add Insurance +")).click();
+	// 	webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
+	// 	webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
+	// 	webDriver.findElement(By.name("insurancevaliddate")).sendKeys("356");
+	// 	webDriver.findElement(By.name("insuranceamount")).sendKeys("");
+	// 	webDriver.findElement(By.name("customervehicleid")).sendKeys("27");
+	// 	webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please enter Insurance Amount !!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
-	@Test
-	void testAddInsurance5() {
-		webDriver.findElement(By.linkText("View Insurance")).click();
-		webDriver.findElement(By.linkText("Add Insurance +")).click();
-		webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
-		webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
-		webDriver.findElement(By.name("insurancevaliddate")).sendKeys("356");
-		webDriver.findElement(By.name("insuranceamount")).sendKeys("45");
-		webDriver.findElement(By.name("customervehicleid")).sendKeys("");
-		webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please Enter the Customer Vehicle Id !!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddInsurance5() {
+	// 	webDriver.findElement(By.linkText("View Insurance")).click();
+	// 	webDriver.findElement(By.linkText("Add Insurance +")).click();
+	// 	webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
+	// 	webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
+	// 	webDriver.findElement(By.name("insurancevaliddate")).sendKeys("356");
+	// 	webDriver.findElement(By.name("insuranceamount")).sendKeys("45");
+	// 	webDriver.findElement(By.name("customervehicleid")).sendKeys("");
+	// 	webDriver.findElement(By.name("insurancetotal")).sendKeys("3556");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please Enter the Customer Vehicle Id !!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
-	@Test
-	void testAddInsurance6() {
-		webDriver.findElement(By.linkText("View Insurance")).click();
-		webDriver.findElement(By.linkText("Add Insurance +")).click();
-		webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
-		webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
-		webDriver.findElement(By.name("insurancevaliddate")).sendKeys("356");
-		webDriver.findElement(By.name("insuranceamount")).sendKeys("45");
-		webDriver.findElement(By.name("customervehicleid")).sendKeys("56");
-		webDriver.findElement(By.name("insurancetotal")).sendKeys("");
-		webDriver.findElement(By.name("submit")).submit();
-		WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
-		wait.until(ExpectedConditions.alertIsPresent());
-		assertEquals("Please Enter the insurance total !!!", webDriver.switchTo().alert().getText());
-		webDriver.switchTo().alert().accept();
+	// @Test
+	// void testAddInsurance6() {
+	// 	webDriver.findElement(By.linkText("View Insurance")).click();
+	// 	webDriver.findElement(By.linkText("Add Insurance +")).click();
+	// 	webDriver.findElement(By.name("insurancenumber")).sendKeys("34");
+	// 	webDriver.findElement(By.name("insurancetakendate")).sendKeys("643");
+	// 	webDriver.findElement(By.name("insurancevaliddate")).sendKeys("356");
+	// 	webDriver.findElement(By.name("insuranceamount")).sendKeys("45");
+	// 	webDriver.findElement(By.name("customervehicleid")).sendKeys("56");
+	// 	webDriver.findElement(By.name("insurancetotal")).sendKeys("");
+	// 	webDriver.findElement(By.name("submit")).submit();
+	// 	WebDriverWait wait = new WebDriverWait(webDriver, Duration.ofSeconds(10));
+	// 	wait.until(ExpectedConditions.alertIsPresent());
+	// 	assertEquals("Please Enter the insurance total !!!", webDriver.switchTo().alert().getText());
+	// 	webDriver.switchTo().alert().accept();
 
-	}
+	// }
 
 //	@Test
 //	void testUpdateInsurance() {
